@@ -1,0 +1,113 @@
+<!-- <title>Instalación de Node.js</title> -->
+<h1>Instalación de Node.js:</h1>
+<p>
+  Primero, debemos instalar Node.js en nuestro sistema. Puedes descargar el
+  instalador adecuado para tu sistema operativo en la página oficial de Node.js: <a
+    href="https://nodejs.org/es/download/">https://nodejs.org/es/download/</a
+  >. Una vez que se haya descargado el archivo, sigue las instrucciones de
+  instalación. Aunque es más recomendable instalarlo usando nvm, ya que te
+  permite tener varias versiones de Node.js instaladas en tu sistema. (puede que
+  lo llegues a necesitar en un futuro). Desde esta pagina <a
+    href="https://github.com/coreybutler/nvm-windows/releases"
+    >https://github.com/coreybutler/nvm-windows/releases</a
+  > puedes descargar el instalador de nvm para Windows.
+</p>
+<h2>Creación de una nueva carpeta:</h2>
+<p>
+  Crea una nueva carpeta para tu proyecto y nómbrala como desees. Puedes hacer
+  esto a través del terminal o mediante un explorador de archivos.
+</p>
+
+<h2>Inicialización del proyecto:</h2>
+<p>
+  Navega hasta la carpeta que acabas de crear usando el terminal y ejecuta el
+  siguiente comando:
+</p>
+<pre>npm init</pre>
+<p>
+  Esto inicializará un nuevo proyecto Node.js y te pedirá que respondas una
+  serie de preguntas. Una vez que hayas respondido todas las preguntas, se
+  creará un archivo package.json en la carpeta.
+</p>
+
+<h2>Instalación de paquetes:</h2>
+<p>
+  Ahora, puedes instalar los paquetes que necesitas para tu proyecto. En lugar
+  de usar npm, utilizaremos pnpm. Puedes instalar pnpm en tu sistema utilizando
+  el siguiente comando:
+</p>
+<pre>npm install -g pnpm</pre>
+<p>
+  Una vez que hayas instalado pnpm, puedes usarlo para instalar paquetes. Por
+  ejemplo, si quisieras instalar el paquete express, deberías ejecutar el
+  siguiente comando:
+</p>
+<pre>pnpm install express</pre>
+<p>
+  Esto instalará el paquete express y todas sus dependencias en tu proyecto.
+</p>
+
+<h2>Creación de un archivo de servidor:</h2>
+<p>
+  Ahora, crea un archivo JavaScript en la carpeta de tu proyecto y nómbralo como
+  desees. Este archivo contendrá el código para tu servidor Node.js. Por
+  ejemplo, podrías nombrarlo server.js.
+</p>
+
+<h2>Configuración del servidor:</h2>
+<p>
+  Dentro del archivo server.js, puedes importar el paquete express y usarlo para
+  configurar tu servidor. Por ejemplo:
+</p>
+<pre>
+  <code lang="javascript">{
+    `
+    const express = require('express');
+    const app = express();
+  
+    app.get('/', (req, res) => {
+      res.send('¡Hola, mundo!');
+    });
+  
+    app.listen(3000, () => {
+      console.log('Servidor iniciado en http://localhost:3000');
+    });
+    `}
+  </code>
+</pre>
+
+<p>
+  Este código crea una nueva instancia de express, define una ruta para la
+  página principal de tu servidor y luego inicia el servidor en el puerto 3000.
+</p>
+
+<h2>Ejecución del servidor:</h2>
+<p>
+  Finalmente, para ejecutar tu servidor, debes ejecutar el siguiente comando en
+  el terminal, estando en la carpeta de tu proyecto:
+</p>
+<pre>node server.js</pre>
+<p>
+  Esto iniciará tu servidor Node.js y podrás acceder a él desde un navegador web
+  visitando <a href="http://localhost:3000/">http://localhost:3000/</a> (o el puerto
+  que hayas configurado en tu servidor). Este comando puede variar dependiendo de
+  como tengas configurado tu package.json. por ejemplo si tienes un script llamado
+  start, puedes ejecutarlo con el comando npm start. o pnpm start si usas pnpm. (quieres
+  saber cual es la diferencia entre npm y pnpm? <a
+    href="https://www.youtube.com/watch?v=MZ6JxWWCA5M">Mira este video</a
+  > de la comunidad de Node.js en español, Node.js en Español (Ne)
+</p>
+<p>
+  ¡Listo! Con estos pasos has creado un servidor Node.js utilizando módulos e
+  instalando paquetes con pnpm.
+</p>
+
+<style>
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    margin-top: 2rem;
+    text-align: center;
+  }
+</style>

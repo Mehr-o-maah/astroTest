@@ -1,0 +1,55 @@
+    Instalación de Node.js:
+    Primero, debemos instalar Node.js en nuestro sistema. Puedes descargar el instalador adecuado para tu sistema operativo en la página oficial de Node.js: https://nodejs.org/es/download/. Una vez que se haya descargado el archivo, sigue las instrucciones de instalación.
+
+    Creación de una nueva carpeta:
+    Crea una nueva carpeta para tu proyecto y nómbrala como desees. Puedes hacer esto a través del terminal o mediante un explorador de archivos.
+
+    Inicialización del proyecto:
+    Navega hasta la carpeta que acabas de crear usando el terminal y ejecuta el siguiente comando:
+
+csharp
+
+npm init
+
+Esto inicializará un nuevo proyecto Node.js y te pedirá que respondas una serie de preguntas. Una vez que hayas respondido todas las preguntas, se creará un archivo package.json en la carpeta.
+
+    Instalación de paquetes:
+    Ahora, puedes instalar los paquetes que necesitas para tu proyecto. En lugar de usar npm, utilizaremos pnpm. Puedes instalar pnpm en tu sistema utilizando el siguiente comando:
+
+npm install -g pnpm
+
+Una vez que hayas instalado pnpm, puedes usarlo para instalar paquetes. Por ejemplo, si quisieras instalar el paquete express, deberías ejecutar el siguiente comando:
+
+pnpm install express
+
+Esto instalará el paquete express y todas sus dependencias en tu proyecto.
+
+    Creación de un archivo de servidor:
+    Ahora, crea un archivo JavaScript en la carpeta de tu proyecto y nómbralo como desees. Este archivo contendrá el código para tu servidor Node.js. Por ejemplo, podrías nombrarlo server.js.
+
+    Configuración del servidor:
+    Dentro del archivo server.js, puedes importar el paquete express y usarlo para configurar tu servidor. Por ejemplo:
+
+javascript
+
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('¡Hola, mundo!');
+});
+
+app.listen(3000, () => {
+  console.log('Servidor iniciado en http://localhost:3000');
+});
+
+Este código crea una nueva instancia de express, define una ruta para la página principal de tu servidor y luego inicia el servidor en el puerto 3000.
+
+    Ejecución del servidor:
+    Finalmente, para ejecutar tu servidor, debes ejecutar el siguiente comando en el terminal, estando en la carpeta de tu proyecto:
+
+node server.js
+
+Esto iniciará tu servidor Node.js y podrás acceder a él desde un navegador web visitando http://localhost:3000/ (o el puerto que hayas configurado en tu servidor).
+
+¡Listo! Con estos pasos has creado un servidor Node.js utilizando módulos e instalando paquetes con pnpm.
